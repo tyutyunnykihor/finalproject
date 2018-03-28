@@ -31,4 +31,27 @@ $(document).ready(function() {
         }
     });
 
+    var xmlhttp = new XMLHttpRequest();
+    var url = "data/gallery.json";
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            loadGallery(myArr);
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function loadGallery(arr) {
+        if (!arr.photos) return;
+        var out = "";
+        var i;
+        for(i = 0; i < arr.photos.length; i++) {
+            out += '<img src="' + arr.photos[i].url_img + '">' +
+                arr.photos[i].title + '<br>';
+        }
+        //document.getElementById("galleryOutput").innerHTML = out;
+    }
+
 });
