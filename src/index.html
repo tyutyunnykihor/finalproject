@@ -1,57 +1,35 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="/css/app.min.css">
-    <title>Document</title>
-</head>
-<body>
-    <!--<div id="wrapper">-->
-        <!--<div id="header">-->
-            <!--<div class="ContentContainer">-->
-                <!--<div class="Logo">-->
-                    <!--<a href="src/styles/logo.png"></a>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div id="footer">-->
-
-    <!--</div>-->
+<!-- @@master= views/components/master.tmpl.html -->
+<!-- @@block= content -->
 <div id="wrapper">
+
         <div class="container swb">
             <div class="row">
                 <div class="navbar  navbar-static-top  headerlogo" role="navigation">
                     <div class="container">
-                        <a class="navbar-brand" href="#">
-                            <img src="src/image/logo1.png">
-                        </a>
-                        <div class="navbar-header">
 
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed headerBtn" data-toggle="collapse" data-target="#responsive-menu">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-
+                            <a href="#" class="navbar-brand logo headerLogo">
+                                <img src="img/logo1.png" alt="logo">
+                            </a>
                         </div>
-                        <div class="navbar-collapse collapse" id="responsive-menu">
+                        <div class="navbar-collapse collapse headerMenuContainer" id="responsive-menu">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#home" class="Menu-link">Home</a></li>
-                                <li><a href="#aboutus" class="Menu-link">About Us</a></li>
-                                <li><a href="#portfolio" class="Menu-link">Portolio</a></li>
-                                <li><a href="#features" class="Menu-link">Features</a></li>
-                                <li><a href="#Blog" class="Menu-link">Blog</a></li>
-                                <li><a href="#pricing" class="Menu-link">Pricing</a></li>
-                                <li><a href="#shortcodes" class="Menu-link">Shortcodest</a></li>
-                                <li><a href="#contact" class="Menu-link">Contact</a></li>
-                                <li><a href="#" ><img src="src/image/icon-cart.png"></a> </li>
-                                <li><a href="#"><img src="src/image/icon-search.png"></a> </li>
+                                <li><a href="#home" class="menuLink">Home</a></li>
+                                <li><a href="#aboutus" class="menuLink">About Us</a></li>
+                                <li><a href="#portfolio" class="menuLink">Portolio</a></li>
+                                <li><a href="#features" class="menuLink">Features</a></li>
+                                <li><a href="#Blog" class="menuLink">Blog</a></li>
+                                <li><a href="#pricing" class="menuLink">Pricing</a></li>
+                                <li><a href="#shortcodes" class="menuLink">Shortcodest</a></li>
+                                <li><a href="#contact" class="menuLink">Contact</a></li>
+                                <li><a href="#" ><img src="img/icon-cart.png"></a> </li>
+                                <li><a href="#"><img src="img/icon-search.png"></a> </li>
 
                             </ul>
                         </div>
@@ -75,7 +53,7 @@
             <div class="carousel-inner">
 
                 <div class="item active ">
-                    <img src="src/image/fon1.jpg" alt="second slide">
+                    <img src="img/fon1.jpg" alt="second slide">
                     <div class="carousel-caption">
                         <div class="full-width text-center">
                             <h3>Unique and Modern Design</h3>
@@ -88,7 +66,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="src/image/fon2.jpg" alt="">
+                    <img src="img/fon2.jpg" alt="">
                     <div class="carousel-caption">
                         <div class="full-width text-center">
                             <h3>Unique and Modern Design</h3>
@@ -101,7 +79,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="src/image/fon3.jpg" alt="">
+                    <img src="img/fon3.jpg" alt="">
                     <div class="carousel-caption">
                         <div class="full-width text-center">
                             <h3>Unique and Modern Design</h3>
@@ -113,7 +91,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="src/image/fon4.jpg" alt="">
+                    <img src="img/fon4.jpg" alt="">
                     <div class="carousel-caption">
                         <div class="full-width text-center">
                             <h3>Unique and Modern Design</h3>
@@ -136,40 +114,40 @@
         </div>
         <div class="container">
             <div class="web">
-                <div class="row">
+                <div class="row centered">
                     <div class="col-lg-3 col-md-3 col-sm-3 second">
-                        <img src="src/image/webapp.png">
+                        <img src="img/webapp.png">
                         <h2>Web & App Design</h2>
                         <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 second">
-                        <img src="src/image/development.png">
+                        <img src="img/development.png">
                         <h2>Development</h2>
                         <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 second">
-                        <img src="src/image/customize.png">
+                        <img src="img/customize.png">
                         <h2>Customization</h2>
                         <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 second">
-                        <img src="src/image/marketing.png">
+                        <img src="img/marketing.png">
                         <h2>Marketing</h2>
                         <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container third">
-            <div>
-                <h1 class="Title-header">Waxom is Realization of your Ideas.</h1>
-                <small class="Title-desc is-uppercase">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</small>
-            </div>
+        <div class="third">
             <div class="container">
-                <div class="screen">
-                    <img src="src/image/browser-left.jpg" class="three">
-                    <img src="src/image/browser-right.jpg" class="seven">
-                    <img src="src/image/browser-center.jpg" class="ace">
+                <div class="thirdContent">
+                    <h1 class="Title-header centered">Waxom is Realization of your Ideas.</h1>
+                    <small class="Title-desc is-uppercase">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</small>
+                </div>
+                <br>
+                <br>
+                <div class="container ce">
+                     <img class="img-responsive" src="img/slide.png">
                 </div>
             </div>
         </div>
@@ -186,18 +164,84 @@
                 </div>
             </div>
         </div>
+        <div class="videoContainer container-fluid">
+            <iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
     </div>
 
 
 
 
+    
+    <div class="iphone">
+        <div class="container">
+            <div class="row">
+                <div class="iphoneInner">
+                    <div class="col-lg-5">
+                        <img src="img/iPhone.png">
+                    </div>
+                    <div class="col-lg-7">
+                        <h1>Excellent for Mobile Devices</h1>
+                        <br>
+                        <p>Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                        <ul class="iphoneUl">
+                            <li>Nam liber tempor cum soluta nobis eleifend option;</li>
+                            <li>Option congue nihil imperdiet doming id quod mazim placerat facer;</li>
+                            <li>Eodem modo typi, qui nunc nobis videntur parum futurum;</li>
+                            <li>Investigationes demonstraverunt lectores</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter">
+        <div class="container">
+            <div class="row centered counterInner">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <img src="img/Counters/1.png">
+                    <h1 class="counterH1">3587</h1>
+                    <p class="counterP">SATISFIELD CLIENTS</p>
+                    <h1 class="counterH1">__</h1>
+                </div>
+                <div class="col-lg-2">
+                    <img src="img/Counters/2.png">
+                    <h1 class="counterH1">207</h1>
+                    <p class="counterP">CUPS OF COFEE</p>
+                    <h1 class="counterH1">__</h1>
+                </div>
+                <div class="col-lg-2">
+                    <img src="img/Counters/3.png">
+                    <h1 class="counterH1">2500</h1>
+                    <p class="counterP">BLOG POSTS</p>
+                    <h1 class="counterH1">__</h1>
+                </div>
+                <div class="col-lg-2">
+                    <img src="img/Counters/4.png">
+                    <h1 class="counterH1">873</h1>
+                    <p class="counterP">LIKES</p>
+                    <h1 class="counterH1">__</h1>
+                </div>
+                <div class="col-lg-2 ">
+                    <img src="img/Counters/5.png">
+                    <h1 class="counterH1">900</h1>
+                    <p class="counterP">WE LAUNCHED</p>
+                    <h1 class="counterH1">__</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="brand">
         <div class="container www">
             <div class="row centered">
-                <div class="col-lg-3"><img src="src/image/brand/logo-01.png"> </div>
-                <div class="col-lg-3"><img src="src/image/brand/logo-02.png"> </div>
-                <div class="col-lg-3"><img src="src/image/brand/logo-03.png"> </div>
-                <div class="col-lg-3"><img src="src/image/brand/logo-04.png"> </div>
+                <div class="col-lg-3"><img src="/img/brand/logo-01.png"> </div>
+                <div class="col-lg-3"><img src="/img/brand/logo-02.png"> </div>
+                <div class="col-lg-3"><img src="/img/brand/logo-03.png"> </div>
+                <div class="col-lg-3"><img src="/img/brand/logo-04.png"> </div>
             </div>
         </div>
     </div>
@@ -205,7 +249,7 @@
         <div class="container end2">
             <div class="row centered">
                 <div class="col-lg-3">
-                    <img src="src/image/logo1.png">
+                    <img src="img/logo1.png">
                     <br>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci architecto asperiores at cum deleniti deserunt eligendi harum ipsum labore libero perspiciatis provident quam, repellendus similique unde, velit veritatis voluptatibus!</p>
                     <br>
@@ -218,20 +262,15 @@
                 <div class="col-lg-3">
                     <h3>Dribbble Widget</h3>
                     <div class="gallery">
-                        <img src="src/image/drible/photo.png">
-                        <img src="src/image/drible/photo1.png">
-                        <img src="src/image/drible/photo2.png">
-                        <img src="src/image/drible/photo3.png">
+                        <img src="img/drible/photo.png">
+                        <img src="img/drible/photo1.png">
+                        <img src="img/drible/photo2.png">
+                        <img src="img/drible/photo3.png">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<!--@@close-->
 
 
