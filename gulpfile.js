@@ -118,8 +118,8 @@ gulp.task('watch', ['build'], function() {
     gulp.watch('src/styles/*.less', ['styles:app']);
     gulp.watch('src/styles/*.less', ['styles:app']).on("change", sync.reload);
 
-    gulp.watch('src/*.html', ['html']);
-    gulp.watch('src/*.html', ['html']).on("change", sync.reload);
+    gulp.watch('src/**/*.html', ['html']);
+    gulp.watch('src/**/*.html', ['html']).on("change", sync.reload);
 
     gulp.watch('src/scripts/main.js', ['scripts:app']);
     gulp.watch('src/scripts/main.js', ['scripts:app']).on("change", sync.reload);
