@@ -1,26 +1,26 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var DEFAULT_SHOW_NUMBER = 6;
 
     var carouselOwl = $('.owl-carousel');
 
     carouselOwl.owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        navText: ["<span class='icon-circle'><i class='glyphicon glyphicon-chevron-left'></i></span>","<span class='icon-circle'><i class='glyphicon glyphicon-chevron-right'></i></span>"],
-        responsive:{
-            0:{
-                items:1
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ["<span class='icon-circle'><i class='glyphicon glyphicon-chevron-left'></i></span>", "<span class='icon-circle'><i class='glyphicon glyphicon-chevron-right'></i></span>"],
+        responsive: {
+            0: {
+                items: 1
             },
-            600:{
-                items:3
+            600: {
+                items: 3
             },
-            1000:{
-                items:3
+            1000: {
+                items: 3
             }
         },
-        afterAction: function(el){
+        afterAction: function (el) {
             //remove class active
             this
                 .$owlItems
@@ -37,7 +37,7 @@ $(document).ready(function() {
     var xmlhttp = new XMLHttpRequest();
     var url = "data/gallery.json";
 
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var myArr = JSON.parse(this.responseText);
             loadGallery(myArr);
@@ -57,24 +57,24 @@ $(document).ready(function() {
         var buttonShowMore = document.getElementById("buttonShowMore");
 
 
-        var uploadPhotos = arr.photos.map(function(elem) {
+        var uploadPhotos = arr.photos.map(function (elem) {
             return elem.category
         });
 
         var uniqueNames = [];
 
-        $.each(uploadPhotos, function(i, el){
-            if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+        $.each(uploadPhotos, function (i, el) {
+            if ($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
         });
 
-        for(var i = 0; i < uniqueNames.length; i++) {
-            outBtns += '<li class="galleryLi" data-category="'+uniqueNames[i]+'"><span class="galleryBtn"><span>' + uniqueNames[i] + '</span></span></li>';
+        for (var i = 0; i < uniqueNames.length; i++) {
+            outBtns += '<li class="galleryLi" data-category="' + uniqueNames[i] + '"><span class="galleryBtn"><span>' + uniqueNames[i] + '</span></span></li>';
         }
 
         galleryBtnContainer.innerHTML = outBtns;
 
-        for(var i = 0; i < arr.photos.length; i++) {
-            out += '<li class="galleryItem col-lg-4 '+arr.photos[i].category+'"><div class="thumbnail"><div class="galleryImg" style="background-image:url('+arr.photos[i].url_img+');"></div><div class="caption"><h3>'+arr.photos[i].name+'</h3><p>'+arr.photos[i].title+'</p></div></div></li>';
+        for (var i = 0; i < arr.photos.length; i++) {
+            out += '<li class="galleryItem col-lg-4 ' + arr.photos[i].category + '"><div class="thumbnail"><div class="galleryImg" style="background-image:url(' + arr.photos[i].url_img + ');"></div><div class="caption"><h3>' + arr.photos[i].name + '</h3><p>' + arr.photos[i].title + '</p></div></div></li>';
         }
 
         galleryItemContainer.innerHTML = out;
@@ -82,7 +82,7 @@ $(document).ready(function() {
         var btns = galleryBtnContainer.getElementsByClassName("galleryLi");
 
         for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function(){
+            btns[i].addEventListener("click", function () {
                 var current = document.getElementsByClassName("activeBtn");
                 current[0].className = current[0].className.replace(" activeBtn", "");
                 this.className += " activeBtn";
@@ -90,7 +90,7 @@ $(document).ready(function() {
             });
         }
 
-        buttonShowMore.addEventListener('click', function() {
+        buttonShowMore.addEventListener('click', function () {
             showMore();
         });
 
@@ -124,7 +124,7 @@ $(document).ready(function() {
             buttonShowMore.classList.remove('hidden');
         } else {
             for (var i = 1; i < galleryItemShowed.length; i++) {
-                    galleryItemShowed[i].classList.remove('hiddenItem');
+                galleryItemShowed[i].classList.remove('hiddenItem');
             }
             buttonShowMore.classList.add('hidden');
         }
@@ -135,7 +135,7 @@ $(document).ready(function() {
         var buttonShowMore = $('#buttonShowMore');
         var hiddenItems = $('#galleryItemContainer').find('.hiddenItem');
 
-        $.each(hiddenItems, function(i, el){
+        $.each(hiddenItems, function (i, el) {
             el.classList.remove('hiddenItem');
         });
         buttonShowMore.addClass('hidden');
@@ -146,7 +146,9 @@ $(document).ready(function() {
         arr1 = element.className.split(" ");
         arr2 = name.split(" ");
         for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) === -1) {element.className += " " + arr2[i];}
+            if (arr1.indexOf(arr2[i]) === -1) {
+                element.className += " " + arr2[i];
+            }
         }
     }
 
@@ -162,9 +164,107 @@ $(document).ready(function() {
         element.className = arr1.join(" ");
     }
 
+    //send form
+    var questionForm = document.getElementById('questionForm');
+    var sendFormBtn = document.getElementById('sendFormBtn');
+    sendFormBtn.addEventListener('click', function (event) {
+        sendForm(event);
+    });
+
+    function sendForm(event) {
+        event.preventDefault();
+
+        var sendObject = {},
+            name = document.getElementById('name').value,
+            email = document.getElementById('email').value,
+            comment = document.getElementById('comment').value;
+
+        sendObject.name = name;
+        sendObject.email = email;
+        sendObject.comment = comment;
+
+        if (formValidation(email, name, comment)) {
+
+            var xmlhttp = new XMLHttpRequest();
+            var url = "/";
+
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert('ok');
+                } else if (this.readyState == 4 && this.status == 404) {
+                    alert('404 error');
+                }
+            };
+            xmlhttp.open("POST", url, true);
+            xmlhttp.send(JSON.stringify(sendObject));
+        }
+    }
+
+
+
+    function formValidation(email, name, comment ) {
+        var valid = true;
+        var validateEmail = document.getElementById("validateEmail");
+        var validateEmail = document.getElementById("validateEmail");
+        var validateEmail = document.getElementById("validateEmail");
+        validateEmail.classList.add('hidden');
+        validateEmail.classList.add('hidden');
+        validateEmail.classList.add('hidden');
+
+        if (!emailValidation(email)) {
+            validateEmail.classList.remove('hidden');
+            valid = false;
+        }
+        // if (!validateName(name)) {
+        //     valid = false;
+        // }
+        // if (!validateComment(email)) {
+        //     valid = false;
+        // }
+
+        if (!emailValidation(email) || !validateName(name) || !validateComment(comment) ) {
+            valid = false;
+        } else {
+            valid = true;
+        }
+
+        return valid;
+
+    }
+
+    function emailValidation(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    };
+
+
+
+
 });
 
-//google maps
+$('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 6000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+
+function initMap() {
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: uluru
+    });
+    var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+    });
+}
 
 
 

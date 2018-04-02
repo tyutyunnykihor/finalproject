@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/app.min.css">
 </head>
 <body>
+<div class="forma">
     <div class="container swb">
         <div class="row">
             <div class="navbar  navbar-static-top  headerlogo" role="navigation">
@@ -34,87 +35,82 @@
                             <li><a href="#pricing" class="menuLink">Pricing</a></li>
                             <li><a href="#shortcodes" class="menuLink">Shortcodest</a></li>
                             <li><a href="views/contacts.html" class="menuLink active">Contact</a></li>
-                            <li><a href="#" ><img src="img/icon-cart.png"></a> </li>
-                            <li><a href="#"><img src="img/icon-search.png"></a> </li>
+                            <li><a href="#" ><img src="../img/icon-cart.png"></a> </li>
+                            <li><a href="#"><img src="../img/icon-search.png"></a> </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="forma row">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h4>Contacts</h4>
-                <div class="telephone">
-                    <h4>Telephone:</h4>
-                    <p>Main phone: +38 (097) 8998-332</p>
-                    <p>Marketing: +39 (099) 12345-678</p>
-                    <p>Administration: +38 (093) 3993-9339 </p>
-                </div>
-                <div class="email">
-                    |<p>E-mail:</p>
-                    <p>info@waxom.ua – Support</p>
-                    <p>investor@waxom.ua – For investor</p>
-                    <p>press@waxom.ua – Press</p>
-                    <p>sales@waxom.ua – Sales</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h4>Have a question?</h4>
-                <form action="#" name="questionForm">
-                    <div class="form-group">
-                        <label for="email" class="control-label">
-                            Email
-                        </label>
-                        <input type="text"
-                               class="form-control"
-                               id="email"
-                               name="email"
-                               placeholder="Enter your E-mail">
-                    </div>
-                    <div class="form-group">
-                        <label for="name" class="control-label">
-                            Name
-                        </label>
-                        <input type="text"
-                               class="form-control"
-                               name="name"
-                               id="name"
-                               placeholder="Enter your name">
-                    </div>
-                </form>
-                <div class="form-group">
-                    <label for="comment">Comment:</label>
-                    <textarea class="form-control" rows="5" id="comment" placeholder="Enter your question"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="adres">
-            <h3>Central office</h3>
-            <p>Address: 8, Vynnychenko St., Ternopil, 46018, Ukraine</p>
-            <div id="map"></div>
-            <script>
-                function initMap() {
-                    var uluru = {lat: -25.363, lng: 131.044};
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 4,
-                        center: uluru
-                    });
-                    var marker = new google.maps.Marker({
-                        position: uluru,
-                        map: map
-                    });
-                }
-            </script>
-            <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-            </script>
+    <div class="row formContainer">
+        <div class="container">
 
+                <div class="col-lg-6">
+                    <h4>Contacts</h4>
+                    <div class="telephone">
+                        <h4>Telephone:</h4>
+                        <p>Main phone: +38 (097) 8998-332</p>
+                        <p>Marketing: +39 (099) 12345-678</p>
+                        <p>Administration: +38 (093) 3993-9339 </p>
+                    </div>
+                    <div class="email">
+                        |<p>E-mail:</p>
+                        <p>info@waxom.ua – Support</p>
+                        <p>investor@waxom.ua – For investor</p>
+                        <p>press@waxom.ua – Press</p>
+                        <p>sales@waxom.ua – Sales</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Have a question?</h4>
+
+                    <form  name="questionForm" id="questionForm">
+                        <div class="validationMsg hidden" id="validateEmail">not correct email</div>
+                        <div class="form-group">
+                            <label for="email" class="control-label">
+                                Email
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="email"
+                                   name="email"
+                                   placeholder="Enter your E-mail">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="control-label">
+                                Name
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   name="name"
+                                   id="name"
+                                   placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea class="form-control" rows="5" id="comment" placeholder="Enter your question"></textarea>
+                        </div>
+                        <button id="sendFormBtn">Send</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+    </div>
+    <div class="maps">
+        <div class="container">
+            <h3>My Google Maps Demo</h3>
+            <div id="map"></div>
         </div>
     </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu6ghSQEBk5cmJrUUA3uwwTieCl5vOyoU&callback=initMap" async defer></script>
+
 <script src="../js/vendor.js"></script>
 <script src="../js/main.js"></script>
 </body>
