@@ -1,76 +1,76 @@
 {
   "photos": [
     {
-      "name": "1",
+      "name": "Mustang",
       "category": "car",
       "url_img": "img/gallery/1.jpg",
-      "title": "sdfdfsdfs"
+      "title": "musscule car by USA"
     },
     {
-      "name": "2",
+      "name": "Great Britain",
       "category": "people",
       "url_img": "img/gallery/2.jpg",
-      "title": "dfffd fdfsggsd gerbg"
+      "title": "Prince and Princess"
     },
     {
-      "name": "3",
+      "name": "Porsche",
       "category": "car",
       "url_img": "img/gallery/3.jpg",
-      "title": "lorem dsfsdvvds fsdfsd fds"
+      "title": "with love from Germany"
     },
     {
-      "name": "4",
+      "name": "Rose",
       "category": "flowers",
       "url_img": "img/gallery/4.jpg",
-      "title": "ds dfds fsdfs dfdsfdsfd f"
+      "title": "Rose for love"
     },
     {
-      "name": "5",
+      "name": "Yellow flowers",
       "category": "flowers",
       "url_img": "img/gallery/5.jpg",
-      "title": "dsdf fsdffdfd sfd"
+      "title": "spring flowers"
     },
     {
-      "name": "6",
+      "name": "Tom Cruise",
       "category": "people",
       "url_img": "img/gallery/6.jpg",
-      "title": "fdsfdsf sdf sdf sfds fd"
+      "title": "Hollywood stars"
     },
     {
-      "name": "7",
+      "name": "Nissan maxima",
       "category": "car",
       "url_img": "img/gallery/7.jpg",
-      "title": "s dfdsfsdfdsfdsfsdfsd sdf f"
+      "title": "Japan dream"
     },
     {
-      "name": "8",
+      "name": "Kia Optima",
       "category": "car",
       "url_img": "img/gallery/8.jpg",
-      "title": "fsdfsdf dfsf sdfsd fd"
+      "title": "Korea business sedan"
     },
     {
-      "name": "9",
+      "name": "penelope cruz",
       "category": "people",
       "url_img": "img/gallery/9.jpg",
-      "title": "sdffdsfs sdfds fdsfd"
+      "title": "Spanish star"
     },
     {
-      "name": "10",
+      "name": "Honda Civic",
       "category": "car",
       "url_img": "img/gallery/10.jpg",
-      "title": "dfsdfhdhgfhfgbgf  gbfbfg "
+      "title": "Sport hot hatchbag"
     },
     {
-      "name": "11",
+      "name": "Zlata Ognevch",
       "category": "people",
       "url_img": "img/gallery/11.jpg",
-      "title": "ghfghg hgfgjjrtetgb bbfgbd"
+      "title": "Ukrainian star"
     },
     {
-      "name": "12",
+      "name": "Flowers",
       "category": "flowers",
       "url_img": "img/gallery/12.jpg",
-      "title": "ftrhtnn nh ntyyhbtbnty ntyr"
+      "title": "Flowers of India"
     }
   ]
 }

@@ -167,9 +167,11 @@ $(document).ready(function () {
     //send form
     var questionForm = document.getElementById('questionForm');
     var sendFormBtn = document.getElementById('sendFormBtn');
-    sendFormBtn.addEventListener('click', function (event) {
-        sendForm(event);
-    });
+    if (sendFormBtn) {
+        sendFormBtn.addEventListener('click', function (event) {
+            sendForm(event);
+        });
+    }
 
     function sendForm(event) {
         event.preventDefault();
@@ -205,22 +207,25 @@ $(document).ready(function () {
     function formValidation(email, name, comment ) {
         var valid = true;
         var validateEmail = document.getElementById("validateEmail");
-        var validateEmail = document.getElementById("validateEmail");
-        var validateEmail = document.getElementById("validateEmail");
+        var validateEmail = document.getElementById("validateName");
+        var validateEmail = document.getElementById("validateComment");
         validateEmail.classList.add('hidden');
-        validateEmail.classList.add('hidden');
-        validateEmail.classList.add('hidden');
+        validateName.classList.add('hidden');
+        validateComment.classList.add('hidden');
 
         if (!emailValidation(email)) {
             validateEmail.classList.remove('hidden');
             valid = false;
         }
-        // if (!validateName(name)) {
-        //     valid = false;
-        // }
-        // if (!validateComment(email)) {
-        //     valid = false;
-        // }
+
+         if (!nameValidation(name)) {
+             validateEmail.classList.remove('hidden');
+            valid = false;
+        }
+        if (!commentValidation(comment)) {
+            validateEmail.classList.remove('hidden');
+            valid = false;
+        }
 
         if (!emailValidation(email) || !validateName(name) || !validateComment(comment) ) {
             valid = false;
@@ -235,8 +240,12 @@ $(document).ready(function () {
     function emailValidation(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    };
+    }
 
+    function nameValidation(name) {
+        var re = /^[a-z ,.'-]+$/i;
+        return re.test(String(name).toLowerCase());
+    }
 
 
 
