@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
     var DEFAULT_SHOW_NUMBER = 6;
+    var MIN_LENGTH = 3;
+    var MAX_LENGTH_INPUT = 20;
+    var MAX_LENGTH_TEXTAREA = 120;
+
+    var once = 0;
 
     var carouselOwl = $('.owl-carousel');
 
@@ -203,12 +208,11 @@ $(document).ready(function () {
     }
 
 
-
-    function formValidation(email, name, comment ) {
+    function formValidation(email, name, comment) {
         var valid = true;
         var validateEmail = document.getElementById("validateEmail");
-        var validateEmail = document.getElementById("validateName");
-        var validateEmail = document.getElementById("validateComment");
+        var validateName = document.getElementById("validateName");
+        var validateComment = document.getElementById("validateComment");
         validateEmail.classList.add('hidden');
         validateName.classList.add('hidden');
         validateComment.classList.add('hidden');
@@ -217,17 +221,17 @@ $(document).ready(function () {
             validateEmail.classList.remove('hidden');
             valid = false;
         }
-
-         if (!nameValidation(name)) {
-             validateEmail.classList.remove('hidden');
+        if (!nameValidation(name) || name.length < MIN_LENGTH || name.length > MAX_LENGTH_INPUT) {
+            validateName.classList.remove('hidden');
             valid = false;
         }
         if (!commentValidation(comment)) {
-            validateEmail.classList.remove('hidden');
+            validateComment.classList.remove('hidden');
+
             valid = false;
         }
 
-        if (!emailValidation(email) || !validateName(name) || !validateComment(comment) ) {
+        if (!emailValidation(email) || !nameValidation(name) || !commentValidation(comment)) {
             valid = false;
         } else {
             valid = true;
@@ -243,24 +247,54 @@ $(document).ready(function () {
     }
 
     function nameValidation(name) {
-        var re = /^[a-z ,.'-]+$/i;
-        return re.test(String(name).toLowerCase());
+        var re =  /^[A-Za-zА-Яа-яІіЇїЄєҐґ -.'ʼ]*[A-Za-zА-Яа-яІіЇїЄєҐґ -.'ʼ][A-Za-zА-Яа-яІіЇїЄєҐґ]*$/;
+        return re.test(String(name));
+    }
+    function commentValidation(comment) {
+        var valid = true;
+        if (comment.length < MIN_LENGTH || comment.length > MAX_LENGTH_TEXTAREA) {
+            valid = false;
+        }
+        return valid;
     }
 
+    var isInViewport = function (elem) {
+        var bounding = elem.getBoundingClientRect();
+        return (
+            bounding.top >= 0 &&
+            bounding.left >= 0 &&
+            bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    };
 
 
-});
+    window.addEventListener('scroll', function (event) {
+        var counter = document.getElementById('counter');
+        if (counter) {
+            if (once === 0 && isInViewport(counter)) {
+                once = 1;
+                startCalculate();
 
-$('.count').each(function () {
-    $(this).prop('Counter',0).animate({
-        Counter: $(this).text()
-    }, {
-        duration: 6000,
-        easing: 'swing',
-        step: function (now) {
-            $(this).text(Math.ceil(now));
+            }
         }
-    });
+
+    }, false);
+
+    function startCalculate() {
+        $('.count').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: "swing",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    }
+
 });
 
 function initMap() {

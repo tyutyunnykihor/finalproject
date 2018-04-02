@@ -46,73 +46,117 @@
     <div class="row formContainer">
         <div class="container contactForm">
 
-                <div class="col-lg-6">
-                    <h1>Contacts</h1>
-                    <div class="telephone">
-                        <h3>Telephone:</h3>
-                        <p>Main phone: +38 (097) 8998-332</p>
-                        <p>Marketing: +39 (099) 12345-678</p>
-                        <p>Administration: +38 (093) 3993-9339 </p>
-                    </div>
-                    <div class="email">
-                        <h3>E-mail:</h3>
-                        <p>info@waxom.ua – Support</p>
-                        <p>investor@waxom.ua – For investor</p>
-                        <p>press@waxom.ua – Press</p>
-                        <p>sales@waxom.ua – Sales</p>
-                    </div>
+            <div class="col-lg-6 contactForm">
+                <h4>Contacts</h4>
+                <div class="telephone">
+                    <h4>Telephone:</h4>
+                    <p>Main phone: +38 (097) 8998-332</p>
+                    <p>Marketing: +39 (099) 12345-678</p>
+                    <p>Administration: +38 (093) 3993-9339 </p>
                 </div>
-            <br>
-                <div class="col-lg-6">
-                    <h3>Have a question?</h3>
-
-                    <form  name="questionForm" id="questionForm">
-                        <div class="validationMsg hidden" id="validateEmail"><h6>not correct email</h6></div>
-                        <div class="form-group">
-                            <label for="email" class="control-label">
-                                <h5>Email</h5>
-                            </label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="email"
-                                   name="email"
-                                   placeholder="Enter your E-mail">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name" class="control-label">
-                                <h5>Name</h5>
-                            </label>
-                            <input type="text"
-                                   class="form-control"
-                                   name="name"
-                                   id="name"
-                                   placeholder="Enter your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea class="form-control" rows="5" id="comment" placeholder="Enter your question"></textarea>
-                        </div>
-                        <button id="sendFormBtn">Send</button>
-                    </form>
-
+                <div class="email">
+                    |<p>E-mail:</p>
+                    <p>info@waxom.ua – Support</p>
+                    <p>investor@waxom.ua – For investor</p>
+                    <p>press@waxom.ua – Press</p>
+                    <p>sales@waxom.ua – Sales</p>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <h4>Have a question?</h4>
+
+                <form  name="questionForm" id="questionForm">
+                    <div class="validationMsg hidden" id="validateEmail">not correct email</div>
+                    <div class="form-group">
+                        <label for="email" class="control-label">
+                            Email
+                        </label>
+                        <input type="text"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               placeholder="Enter your E-mail">
+                    </div>
+                    <div class="validationMsg hidden" id="validateName">not correct name</div>
+                    <div class="form-group">
+                        <label for="name" class="control-label">
+                            Name
+                        </label>
+                        <input type="text"
+                               class="form-control"
+                               name="name"
+                               id="name"
+                               placeholder="Enter your name">
+                    </div>
+                    <div class="validationMsg hidden" id="validateComment">not correct comment</div>
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea class="form-control" rows="5" id="comment" placeholder="Enter your question"></textarea>
+                    </div>
+                    <button id="sendFormBtn">Send</button>
+                </form>
+
+            </div>
+        </div>
 
 
 
 
     </div>
-    <div class="maps">
-        <div class="container contactForm">
-            <h3>Our Address <i class="glyphicon glyphicon-flag"></i> </h3>
+    <div class="maps google">
+        <div class="container ">
+            <h3>our address</h3>
             <div id="map"></div>
         </div>
     </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnh73HwYy5nxr_Il3rLb7-FKERxkCizrk&callback=initMap" async defer></script>
+<div class="footer">
+    <div class="end">
+        <div class="container end2">
+            <div class="row ">
+                <div class="col-lg-3 footerText contactForm">
+                    <img src="../img/logo1.png" class="footerLogo">
 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci architecto asperiores at cum deleniti deserunt eligendi harum ipsum labore libero perspiciatis provident quam, repellendus similique unde, velit veritatis voluptatibus!</p>
+                    <br>
+                    <a href="#">Read more<i class="glyphicon glyphicon-play"></i> </a>
+                </div>
+                <div class="col-lg-3 footerText contactForm">
+                    <h3>Recent post</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem nisi quos sequi?</p>
+                </div>
+                <div class="col-lg-3 footerText ">
+                    <h3>Our Twitter</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci architecto asperiores at cum deleniti deserunt eligendi harum ipsum labore libero perspiciatis provident quam, repellendus similique unde, velit veritatis voluptatibus!</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Dribbble Widget</h3>
+                    <div class="gallery">
+                        <img src="../img/drible/photo.png">
+                        <img src="../img/drible/photo1.png">
+                        <img src="../img/drible/photo2.png">
+                        <img src="../img/drible/photo3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <p>Copyright © 2015 Waxom   |   Privacy Policy   |   FAQ   |   Support</p>
+                </div>
+                <div class="col-lg-2"><p>Designed by ThemeFire </p></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 <script src="../js/vendor.js"></script>
 <script src="../js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnh73HwYy5nxr_Il3rLb7-FKERxkCizrk&callback=initMap" async defer></script>
+
 </body>
 </html>
